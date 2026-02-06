@@ -100,6 +100,7 @@ const Index = () => {
               <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> KWB Net</span>
               <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> ASA Net</span>
               <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> MAC Net</span>
+              <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> Alta Net</span>
             </div>
           </AnimatedSection>
         </div>

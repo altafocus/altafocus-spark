@@ -51,6 +51,7 @@ const Footer = () => (
             <li>KWB Net</li>
             <li>ASA Net</li>
             <li>MAC Net</li>
+            <li>Alta Net</li>
           </ul>
         </div>
 
