@@ -10,7 +10,7 @@ const Footer = () => (
         <div>
           <img src={logo} alt="AltaFocus" className="h-10 mb-4" />
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Reliable Connectivity Solutions – Konektivitas stabil untuk rumah, gaming, dan bisnis di Kota Batu.
+            Reliable Connectivity Solutions.
           </p>
           <div className="flex gap-3 mt-4">
             <a href="https://www.facebook.com/altafocusmediacenter" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg glass-card hover:bg-primary/10 transition-colors" aria-label="Facebook">

@@ -52,7 +52,7 @@ const Paket = () => (
           <GlassCard strong className="text-center py-10">
             <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-accent/10 text-accent mb-4">Enterprise</span>
             <h2 className="text-2xl font-bold mb-2">Paket Corporate / Dedicated</h2>
-            <p className="text-muted-foreground mb-2">Solusi konektivitas khusus untuk kebutuhan enterprise dan korporat.</p>
+            <p className="text-muted-foreground mb-2">Solusi konektivitas khusus untuk kebutuhan Enterprise dan Corporate.</p>
             <div className="text-3xl font-bold text-gradient mb-6">Hubungi Kami</div>
             <a href="https://wa.me/628999605666?text=Halo%20AltaFocus%2C%20saya%20tertarik%20dengan%20paket%20Corporate%20%2F%20Dedicated." target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg">Hubungi WhatsApp <ChevronRight className="w-4 h-4" /></Button>

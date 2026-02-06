@@ -37,7 +37,8 @@ const Kontak = () => {
                   <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Alamat</h3>
-                    <p className="text-sm text-muted-foreground">Raya Jurang Susuh No.02, Kel. Giripurno, Kec. Bumiaji, Kota Batu 65333</p>
+                    <p className="text-sm text-muted-foreground">Raya Jurang Susuh No.02<br />
+                      Kel. Giripurno, Kec. Bumiaji, Kota Batu 65333</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

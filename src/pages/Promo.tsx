@@ -37,8 +37,8 @@ const promos = [
     icon: Zap,
   },
   {
-    title: "Upgrade Gratis 1 Bulan",
-    desc: "Upgrade ke paket lebih tinggi gratis selama 1 bulan pertama. Rasakan kecepatan lebih tanpa biaya tambahan.",
+    title: "Coming Soon",
+    desc: "Coming Soon.",
     badge: "Hot Deal",
     icon: Star,
   },

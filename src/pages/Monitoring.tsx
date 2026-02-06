@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import GlassCard from "@/components/GlassCard";
 import { Button } from "@/components/ui/button";
-import { Activity, Gauge, ArrowUpDown, Calendar, AlertTriangle } from "lucide-react";
+import { Activity, Gauge, ArrowUpDown, Calendar, AlertTriangle, Network, ChevronDown } from "lucide-react";
 
 // Dummy chart component
 const BandwidthChart = () => {
@@ -43,7 +43,40 @@ const Monitoring = () => {
       <section className="hero-gradient section-padding pt-24">
         <div className="container-main">
           <AnimatedSection>
-            <h1 className="text-3xl font-bold mb-8">Monitoring Jaringan</h1>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+              <h1 className="text-3xl font-bold">Monitoring Jaringan</h1>
+              
+              {/* Dropdown Menu */}
+              <div className="relative w-full sm:w-auto group">
+                <button className="w-full sm:w-auto flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary font-medium hover:bg-primary/20 transition-colors duration-200">
+                  <Network className="w-4 h-4" />
+                  <span>Monitoring Network</span>
+                  <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-200" />
+                </button>
+
+                {/* Dropdown Content - Tampil saat hover */}
+                <div className="absolute top-full left-0 right-0 sm:left-auto sm:right-0 mt-2 w-full sm:w-56 bg-background border border-primary/20 rounded-xl shadow-lg glass-card-strong p-2 z-50 hidden group-hover:block">
+                  <a
+                    href="https://nms.altafocus.id/index.htm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-foreground hover:bg-primary/10 transition-colors duration-200"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <span className="font-medium">NMS POP</span>
+                  </a>
+                  <a
+                    href="https://stats.uptimerobot.com/7JvoJim5Lz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-foreground hover:bg-primary/10 transition-colors duration-200"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <span className="font-medium">NMS Global</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </AnimatedSection>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

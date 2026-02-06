@@ -10,12 +10,12 @@ import { Link } from "react-router-dom";
 const WA_LINK = "https://wa.me/628999605666?text=Halo%20AltaFocus%2C%20saya%20ingin%20mendaftar%20layanan%20internet.";
 
 const features = [
-  { icon: Wifi, title: "Stabil & Konsisten", desc: "Koneksi internet yang andal tanpa gangguan berarti." },
-  { icon: Gamepad2, title: "Latency Rendah", desc: "Ideal untuk gaming online dengan ping minimal." },
-  { icon: HeadphonesIcon, title: "Support Responsif", desc: "Tim support siap membantu kapan saja." },
-  { icon: Users, title: "Tim Lokal Profesional", desc: "Teknisi berpengalaman di Kota Batu." },
-  { icon: Network, title: "Jaringan Terkelola", desc: "Infrastruktur profesional dan termonitor." },
-  { icon: Building2, title: "Cocok Rumah & Bisnis", desc: "Solusi untuk berbagai kebutuhan konektivitas." },
+  { icon: Wifi, title: "Stabil & Konsisten", desc: "Koneksi internet yang handal minim gangguan." },
+  { icon: Gamepad2, title: "Latency Rendah", desc: "Ideal untuk game online dengan ping minimal." },
+  { icon: HeadphonesIcon, title: "Support Responsif", desc: "Tim support siap membantu sampai maksimal." },
+  { icon: Users, title: "Tim Lokal Profesional", desc: "Dikerjakan dengan teknisi yang profesional pada bidangnya dan berpengalaman." },
+  { icon: Network, title: "Jaringan Terkelola", desc: "Menggunakan link terbaik serta termonitor." },
+  { icon: Building2, title: "Cocok Untuk Rumah & Bisnis", desc: "Solusi untuk berbagai kebutuhan konektivitas." },
 ];
 
 const packages = [
@@ -39,11 +39,11 @@ const testimonials = [
 ];
 
 const faqs = [
-  { q: "Apa saja area coverage AltaFocus?", a: "Saat ini kami melayani wilayah Kota Batu dan sekitarnya termasuk Kecamatan Bumiaji, Batu, dan Junrejo." },
+  { q: "Dimana saja area coverage AltaFocus?", a: "Saat ini kami melayani wilayah Kota Batu dan sekitarnya." },
   { q: "Berapa lama proses instalasi?", a: "Proses instalasi biasanya selesai dalam 1-3 hari kerja setelah survei lokasi." },
   { q: "Apakah ada biaya instalasi?", a: "Informasi biaya instalasi dapat ditanyakan langsung melalui WhatsApp kami." },
   { q: "Bagaimana jika terjadi gangguan?", a: "Silakan hubungi tim support kami via WhatsApp. Tim teknisi lokal kami siap membantu." },
-  { q: "Apakah tersedia IP Public?", a: "Ya, IP Public / Static tersedia untuk paket Business Pro. Hubungi kami untuk detail." },
+  { q: "Apakah tersedia IP Public?", a: "Ya, IP Public / Static tersedia untuk paket Business Pro. Hubungi kami untuk detail lebih lanjut." },
 ];
 
 const Index = () => {
@@ -73,7 +73,8 @@ const Index = () => {
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mb-6 leading-relaxed">
-              Konektivitas stabil untuk rumah, gaming, dan bisnis di Kota Batu dan sekitarnya.
+              Solusi Internet handal dengan kualitas jaringan prima
+              
             </p>
           </AnimatedSection>
 
@@ -109,14 +110,14 @@ const Index = () => {
         <div className="container-main">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-3">Kenapa AltaFocus?</h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">Keunggulan layanan kami yang membedakan dari penyedia lain.</p>
+              <h2 className="text-3xl font-bold mb-3">Mengapa Memilih AltaFocus?</h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">Keunggulan layanan kami untuk koneksi internet yang stabil & cepat</p>
             </div>
           </AnimatedSection>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f, i) => (
               <AnimatedSection key={f.title} delay={i * 0.1}>
-                <GlassCard strong className="h-full hover:-translate-y-1 transition-transform duration-300">
+                <GlassCard strong className="h-full hover:-translate-y-1 transition-transform duration-300 text-center flex flex-col items-center">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                     <f.icon className="w-6 h-6 text-primary" />
                   </div>
@@ -135,7 +136,7 @@ const Index = () => {
           <AnimatedSection>
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-3">Paket Internet</h2>
-              <p className="text-muted-foreground">Pilih paket yang sesuai kebutuhan Anda.</p>
+              <p className="text-muted-foreground">Pilih paket sesuai kebutuhan Anda. Harga dan ketersediaan layanan menyesuaikan lokasi pemasangan, Untuk detail paket silakan hubungi Customer Service kami.</p>
             </div>
           </AnimatedSection>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -239,7 +240,7 @@ const Index = () => {
             </div>
           </AnimatedSection>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {["Kecamatan Bumiaji", "Kecamatan Batu", "Kecamatan Junrejo", "Giripurno", "Tulungrejo", "Punten"].map((area, i) => (
+            {["Malang", "Batu", "Coming Soon"].map((area, i) => (
               <AnimatedSection key={area} delay={i * 0.1}>
                 <GlassCard className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-primary shrink-0" />
