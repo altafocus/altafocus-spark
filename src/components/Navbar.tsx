@@ -6,6 +6,7 @@ import logo from "@/assets/logo-altafocus.png";
 const navLinks = [
   { href: "/", label: "Beranda" },
   { href: "/paket", label: "Paket" },
+  { href: "/promo", label: "Promo" },
   { href: "/tentang", label: "Tentang" },
   { href: "/kontak", label: "Kontak" },
   { href: "/daftar", label: "Daftar" },
