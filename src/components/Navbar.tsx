@@ -14,8 +14,19 @@ const navLinks = [
   { href: "/login", label: "Login User" },
 ];
 
+const monitoringSubmenu = [
+  { label: "UptimeRobot", href: "https://stats.uptimerobot.com/7JvoJim5Lz" },
+  { label: "NMS Monitoring", href: "https://nms.altafocus.id/index.htm" },
+  { label: "BGP Graph", href: "https://bgp.he.net/AS150986" },
+  { label: "Looking Glass", href: "https://lg.altafocus.id/" },
+  { label: "Route Server", href: "https://route.altafocus.id" },
+  { label: "PeeringDB", href: "https://www.peeringdb.com/net/33382" },
+  { label: "BGP Tools", href: "https://bgp.tools/as/150986" },
+];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [mobileMonitoringOpen, setMobileMonitoringOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -57,17 +68,48 @@ const Navbar = () => {
         {/* Desktop */}
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                to={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === link.href
-                    ? "bg-primary/10 text-primary"
-                    : "text-foreground/70 hover:text-foreground hover:bg-muted"
-                }`}
-              >
-                {link.label}
-              </Link>
+            <li key={link.href} className={link.href === "/monitoring" ? "relative group" : ""}>
+              {link.href === "/monitoring" ? (
+                <>
+                  <Link
+                    to={link.href}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                      location.pathname === link.href
+                        ? "bg-primary/10 text-primary"
+                        : "text-foreground/70 hover:text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+
+                  <div className="absolute left-0 top-full mt-2 hidden group-hover:block min-w-[220px] z-50">
+                    <div className="glass-card-strong rounded-lg shadow-md py-2">
+                      {monitoringSubmenu.map((item) => (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block px-4 py-2 text-sm text-foreground/80 hover:bg-muted"
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <Link
+                  to={link.href}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                    location.pathname === link.href
+                      ? "bg-primary/10 text-primary"
+                      : "text-foreground/70 hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -88,16 +130,45 @@ const Navbar = () => {
           <ul className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link
-                  to={link.href}
-                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                    location.pathname === link.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground/70 hover:bg-muted"
-                  }`}
-                >
-                  {link.label}
-                </Link>
+                {link.href === "/monitoring" ? (
+                  <>
+                    <button
+                      onClick={() => setMobileMonitoringOpen((s) => !s)}
+                      className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                        location.pathname === link.href ? "bg-primary/10 text-primary" : "text-foreground/70 hover:bg-muted"
+                      }`}
+                    >
+                      {link.label}
+                    </button>
+
+                    {mobileMonitoringOpen && (
+                      <div className="pl-4">
+                        {monitoringSubmenu.map((item) => (
+                          <a
+                            key={item.href}
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-4 py-2 rounded-lg text-sm text-foreground/80 hover:bg-muted"
+                          >
+                            {item.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    to={link.href}
+                    className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                      location.pathname === link.href
+                        ? "bg-primary/10 text-primary"
+                        : "text-foreground/70 hover:bg-muted"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
