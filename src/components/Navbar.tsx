@@ -8,9 +8,10 @@ const navLinks = [
   { href: "/paket", label: "Paket" },
   { href: "/promo", label: "Promo" },
   { href: "/tentang", label: "Tentang" },
+  { href: "/monitoring", label: "Monitoring" },
   { href: "/kontak", label: "Kontak" },
   { href: "/daftar", label: "Daftar" },
-  { href: "/login", label: "Member" },
+  { href: "/login", label: "Login User" },
 ];
 
 const Navbar = () => {
@@ -25,6 +26,22 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => setOpen(false), [location]);
+
+  useEffect(() => {
+    const titleMap: Record<string, string> = {
+      "/": "Beranda - AltaFocus",
+      "/paket": "Paket - AltaFocus",
+      "/promo": "Promo - AltaFocus",
+      "/tentang": "Tentang - AltaFocus",
+      "/monitoring": "Monitoring - AltaFocus",
+      "/kontak": "Kontak - AltaFocus",
+      "/daftar": "Daftar - AltaFocus",
+      "/login": "Login User - AltaFocus",
+    };
+
+    const path = location.pathname || "/";
+    document.title = titleMap[path] || "AltaFocus";
+  }, [location]);
 
   return (
     <header

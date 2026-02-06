@@ -63,22 +63,28 @@ const Index = () => {
           <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
         </div>
         <div className="container-main section-padding relative z-10 flex flex-col items-center text-center min-h-[80vh] justify-center">
-          <AnimatedSection>
-            <span className="inline-block mb-4 px-4 py-1.5 rounded-full glass-card text-sm font-medium text-primary">
-              PT AltaFocus Media Center
-            </span>
-          </AnimatedSection>
+          
           <AnimatedSection delay={0.1}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="text-gradient">Reliable</span>{" "}
-              <span className="text-foreground">Connectivity</span><br />
-              <span className="text-foreground">Solutions</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+              <span className="text-gradient">Reliable</span>
+              <br />
+              <span className="text-foreground">Connectivity Solutions</span>
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mb-6 leading-relaxed">
               Konektivitas stabil untuk rumah, gaming, dan bisnis di Kota Batu dan sekitarnya.
             </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.25}>
+            <div className="flex flex-wrap justify-center gap-8 mt-4 mb-8 text-xl font-semibold text-primary/80">
+              <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> KWB NET </span>
+              <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> SAE NET </span>
+              <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> ASA NET</span>
+              <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> ALTA NET</span>
+              <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> MAC NET</span>
+            </div>
           </AnimatedSection>
           <AnimatedSection delay={0.3}>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -94,15 +100,7 @@ const Index = () => {
               </a>
             </div>
           </AnimatedSection>
-          <AnimatedSection delay={0.4}>
-            <div className="flex gap-6 mt-10 text-sm text-muted-foreground">
-              <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> SAE Net</span>
-              <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> KWB Net</span>
-              <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> ASA Net</span>
-              <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> MAC Net</span>
-              <span className="flex items-center gap-1"><Star className="w-4 h-4 text-primary" /> Alta Net</span>
-            </div>
-          </AnimatedSection>
+          
         </div>
       </section>
 
