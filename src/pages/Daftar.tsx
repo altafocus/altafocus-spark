@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import { MapPin, Loader2 } from "lucide-react";
 
 const pakets = ["Home Basic – 10 Mbps", "Home Plus – 25 Mbps", "Home Max – 50 Mbps", "Business Pro – 100 Mbps", "Corporate / Dedicated"];
 
@@ -14,6 +15,28 @@ const Daftar = () => {
   const [form, setForm] = useState({
     nama: "", whatsapp: "", alamat: "", maps: "", paket: "", catatan: "",
   });
+  const [gpsLoading, setGpsLoading] = useState(false);
+
+  const handleGetLocation = () => {
+    if (!navigator.geolocation) {
+      alert("Browser Anda tidak mendukung GPS.");
+      return;
+    }
+    setGpsLoading(true);
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+        const mapsLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
+        setForm(p => ({ ...p, maps: mapsLink }));
+        setGpsLoading(false);
+      },
+      () => {
+        alert("Gagal mendapatkan lokasi. Pastikan izin GPS aktif.");
+        setGpsLoading(false);
+      },
+      { enableHighAccuracy: true }
+    );
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,7 +74,13 @@ const Daftar = () => {
                 </div>
                 <div>
                   <Label htmlFor="maps">Link Google Maps Lokasi</Label>
-                  <Input id="maps" value={form.maps} onChange={e => setForm(p => ({ ...p, maps: e.target.value }))} placeholder="https://maps.app.goo.gl/..." />
+                  <div className="flex gap-2">
+                    <Input id="maps" value={form.maps} onChange={e => setForm(p => ({ ...p, maps: e.target.value }))} placeholder="https://maps.app.goo.gl/..." className="flex-1" />
+                    <Button type="button" variant="outline" onClick={handleGetLocation} disabled={gpsLoading} className="shrink-0">
+                      {gpsLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <MapPin className="w-4 h-4" />}
+                      <span className="hidden sm:inline">{gpsLoading ? "Mencari..." : "Lokasi GPS"}</span>
+                    </Button>
+                  </div>
                 </div>
                 <div>
                   <Label>Pilih Paket</Label>
