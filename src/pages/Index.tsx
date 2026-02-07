@@ -66,7 +66,7 @@ const Index = () => {
           
           <AnimatedSection delay={0.1}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-              <span className="text-gradient">SAE NET</span>
+              <span className="text-gradient">KWB NET</span>
               <br />
               <span className="text-foreground">Connectivity Solutions</span>
             </h1>
